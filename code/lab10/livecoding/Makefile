@@ -1,15 +1,15 @@
-# Livecoding Makefile for Lab 11
+# Livecoding Makefile for Lab 10
 
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
-TARGET = alt_fs_workshop
+TARGET = fs_workshop
 
 .PHONY: all clean
 
 all: $(TARGET)
 	@echo "✓ Built livecoding binary: $(TARGET)"
 
-$(TARGET): alt_fs_workshop.c
+$(TARGET): fs_workshop.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 clean:

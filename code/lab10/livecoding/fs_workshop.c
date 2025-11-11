@@ -21,10 +21,23 @@ static void die(const char *msg) {
  */
 static void cmd_list(const char *path) {
 	(void)path;
-	fprintf(stderr, "[TODO] Implement cmd_list() using opendir/readdir/lstat\n");
-	/* Sample output format:
-	 *   printf("%-25s size=%lld mode=%o\n", name, (long long)st.st_size, st.st_mode & 07777);
-	 */
+	
+	DIR *dir = opendir(path);
+	if (dir == NULL) {
+		perror("opendir");
+		return;
+	}
+	while (1) {
+		struct dirent *entry = readdir(dir);
+		if (entry == NULL) break;
+		struct stat st;
+		if (lstat(entry->d_name, &st) == -1) {
+			perror("lstat");
+			continue;
+		}
+		printf("%-25s size=%lld mode=%o\n", entry->d_name, (long long)st.st_size, st.st_mode & 07777);
+	}
+	closedir(dir);
 }
 
 /* TODO 2: Inode metadata

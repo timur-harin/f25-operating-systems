@@ -1,13 +1,12 @@
-# Makefile for Lab 11: Filesystems and UNIX I/O
+# Makefile for Lab 11: Alternative File Systems
 
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
 SRC_DIR = snippets/c
 BIN_DIR = bin
 
-TARGETS = $(BIN_DIR)/list_dir $(BIN_DIR)/inode_info \
-          $(BIN_DIR)/file_io $(BIN_DIR)/sparse_file \
-          $(BIN_DIR)/mmap_copy
+TARGETS = $(BIN_DIR)/lfs_log $(BIN_DIR)/journaling_demo \
+          $(BIN_DIR)/cow_tree
 
 .PHONY: all clean
 

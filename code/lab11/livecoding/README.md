@@ -1,27 +1,24 @@
-Lab 11 Livecoding: Filesystem & I/O Practice
-============================================
+Lab 11 Livecoding: Alternative File Systems
+===========================================
 
 Goal
 ----
-Hands-on exercises to explore UNIX filesystem APIs and connect them with Lab 11 concepts.
+Hands-on simulations to understand LFS, journaling, and copy-on-write (CoW) trees.
 
 How to use
 ----------
-1. Open `fs_workshop.c`.
-2. Work through the `TODO` markers (there are five sections aligning with the lecture topics).
+1. Open `alt_fs_workshop.c`.
+2. Work through the `TODO` markers (three sections align with lecture topics).
 3. Build with: `make`
-4. Run: `./fs_workshop [command] [args]`
-   - `list <path>`: directory traversal
-   - `stat <path>`: inode metadata
-   - `io-demo`: open/write/fsync example
-   - `sparse`: create sparse file
-   - `mmap-copy <src> <dst>`: memory-mapped copy
+4. Run: `./alt_fs_workshop [command]`
+   - `lfs`        : append-only log + simple cleaner
+   - `journal`    : write-ahead logging + recovery sketch
+   - `cow`        : copy-on-write tree and snapshots
 
 Stretch ideas
 -------------
-- Add error handling wrappers to reduce duplication.
-- Extend `list` to show inode numbers and file types similar to `ls -li`.
-- Record timestamps (atime/mtime) before and after operations to observe changes.
-- Add checksum verification for `mmap-copy`.
+- Add segment utilization and cost model to `lfs`.
+- Add multi-op transactions and crash points to `journal`.
+- Add reference counting and deduplication to `cow`.
 
 

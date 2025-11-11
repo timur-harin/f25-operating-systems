@@ -1,13 +1,13 @@
-# Makefile for Lab 10: Disk Scheduling Algorithms
+# Makefile for Lab 10: Filesystems and UNIX I/O
 
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
 SRC_DIR = snippets/c
 BIN_DIR = bin
 
-TARGETS = $(BIN_DIR)/fcfs_disk $(BIN_DIR)/sstf_disk \
-          $(BIN_DIR)/scan_disk $(BIN_DIR)/cscan_disk \
-          $(BIN_DIR)/look_disk $(BIN_DIR)/compare_all
+TARGETS = $(BIN_DIR)/list_dir $(BIN_DIR)/inode_info \
+          $(BIN_DIR)/file_io $(BIN_DIR)/sparse_file \
+          $(BIN_DIR)/mmap_copy
 
 .PHONY: all clean
 

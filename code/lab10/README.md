@@ -1,22 +1,21 @@
-Lab 10: Disk Scheduling Algorithms
+Lab 10: Filesystems and UNIX I/O
 
 Overview
-- Simulations of disk head scheduling: FCFS, SSTF, SCAN, C-SCAN, LOOK
-- Demonstrates total head movement and service order for a fixed request queue
-- Highlights trade-offs: throughput vs fairness and starvation risks
+- Practical UNIX filesystem and file I/O demonstrations
+- Directory traversal, file metadata (inode), sparse files, mmap, and robust I/O
+- Connects API usage to filesystem concepts from the lecture
 
 Snippets
 
-fcfs_disk.c - First-Come-First-Served
-sstf_disk.c - Shortest Seek Time First
-scan_disk.c - SCAN (Elevator)
-cscan_disk.c - C-SCAN (Circular SCAN)
-look_disk.c - LOOK (bounds by last requests)
-compare_all.c - Side-by-side comparison of all algorithms
+list_dir.c - Traverse a directory with opendir/readdir and stat
+inode_info.c - Display POSIX stat() fields and permissions
+file_io.c - Write/read with open/read/write/fsync and O flags
+sparse_file.c - Create and inspect sparse files with lseek(SEEK_CUR/SEEK_END)
+mmap_copy.c - Copy a file using mmap for zero-copy I/O
 
 Build: `make`
 Run: `./bin/<demo>`
 
-Notes: Cylinder range assumed [0..199]; initial head at 50 by default in demos.
+Notes: Demos use a temp working directory under ./bin when needed; run scripts provided.
 
 

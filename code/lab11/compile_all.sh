@@ -1,13 +1,11 @@
 #!/bin/bash
 set -e
-echo "=== Lab 11: Filesystems and UNIX I/O ===" 
+echo "=== Lab 11: Alternative File Systems ===" 
 make -C "$(dirname "$0")" clean && make -C "$(dirname "$0")"
 echo ""
 echo "Run demos:"
-echo "  ./snippets/sh/run_list_dir.sh"
-echo "  ./snippets/sh/run_inode_info.sh"
-echo "  ./snippets/sh/run_file_io.sh"
-echo "  ./snippets/sh/run_sparse_file.sh"
-echo "  ./snippets/sh/run_mmap_copy.sh"
+echo "  ./snippets/sh/run_lfs_log.sh"
+echo "  ./snippets/sh/run_journaling_demo.sh"
+echo "  ./snippets/sh/run_cow_tree.sh"
 
 

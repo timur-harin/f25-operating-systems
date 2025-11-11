@@ -1,21 +1,19 @@
-Lab 11: Filesystems and UNIX I/O
+Lab 11: Alternative File Systems
 
 Overview
-- Practical UNIX filesystem and file I/O demonstrations
-- Directory traversal, file metadata (inode), sparse files, mmap, and robust I/O
-- Connects API usage to filesystem concepts from the lecture
+- Simulations illustrating alternative FS designs and strategies
+- Log-structured filesystem (LFS) concepts, journaling, and copy-on-write (CoW) trees
+- Focuses on algorithms and state transitions rather than kernel integration
 
 Snippets
 
-list_dir.c - Traverse a directory with opendir/readdir and stat
-inode_info.c - Display POSIX stat() fields and permissions
-file_io.c - Write/read with open/read/write/fsync and O flags
-sparse_file.c - Create and inspect sparse files with lseek(SEEK_CUR/SEEK_END)
-mmap_copy.c - Copy a file using mmap for zero-copy I/O
+lfs_log.c - Append-only log, segment utilization, and simple cleaner
+journaling_demo.c - Write-ahead logging, commit records, and recovery sketch
+cow_tree.c - Copy-on-write tree with snapshotting semantics
 
 Build: `make`
 Run: `./bin/<demo>`
 
-Notes: Demos use a temp working directory under ./bin when needed; run scripts provided.
+Notes: Educational simulations run in user space; outputs show structure transitions and durability points.
 
 

@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 echo "======================================================"
-echo "Lab 10: Disk Scheduling Algorithms - Complete Demo"
+echo "Lab 10: Filesystems and UNIX I/O - Complete Demo"
 echo "======================================================"
 echo ""
 echo "Press ENTER between demos, or Ctrl+C to exit."
@@ -14,32 +14,27 @@ echo ""
 read -p "Press ENTER to start..."
 
 echo ""
-bash ./snippets/sh/run_fcfs_disk.sh
+bash ./snippets/sh/run_list_dir.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-bash ./snippets/sh/run_sstf_disk.sh
+bash ./snippets/sh/run_inode_info.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-bash ./snippets/sh/run_scan_disk.sh
+bash ./snippets/sh/run_file_io.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-bash ./snippets/sh/run_cscan_disk.sh
+bash ./snippets/sh/run_sparse_file.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-bash ./snippets/sh/run_look_disk.sh
-echo ""
-read -p "Press ENTER for comparison..."
-
-echo ""
-bash ./snippets/sh/run_compare_all.sh
+bash ./snippets/sh/run_mmap_copy.sh
 echo ""
 
 echo "======================================================"

@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 echo "======================================================"
-echo "Lab 11: Filesystems and UNIX I/O - Complete Demo"
+echo "Lab 11: Alternative File Systems - Complete Demo"
 echo "======================================================"
 echo ""
 echo "Press ENTER between demos, or Ctrl+C to exit."
@@ -14,27 +14,17 @@ echo ""
 read -p "Press ENTER to start..."
 
 echo ""
-bash ./snippets/sh/run_list_dir.sh
+bash ./snippets/sh/run_lfs_log.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-bash ./snippets/sh/run_inode_info.sh
+bash ./snippets/sh/run_journaling_demo.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-bash ./snippets/sh/run_file_io.sh
-echo ""
-read -p "Press ENTER for next demo..."
-
-echo ""
-bash ./snippets/sh/run_sparse_file.sh
-echo ""
-read -p "Press ENTER for next demo..."
-
-echo ""
-bash ./snippets/sh/run_mmap_copy.sh
+bash ./snippets/sh/run_cow_tree.sh
 echo ""
 
 echo "======================================================"
